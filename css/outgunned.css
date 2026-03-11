@@ -31,8 +31,13 @@
 
 .outgunned .superhero-character-sheet {
 --primary-colour: #1d4a87;
+--primaryIcon: #1d4a87;
 }
 
+.outgunned .superhero-character-sheet .primIcon{
+  /* CSS cascading is weird */
+  color: var(--primaryIcon);
+}
 
 body {
   background-attachment: fixed !important;

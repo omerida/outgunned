@@ -26,10 +26,12 @@ export class OutgunnedSuperheroSheet extends OutgunnedCharacterSheet {
   }
 
   async getData() {
+    console.log("superhero.getData")
     //Create context for easier access to actor data  
-    const context = super.getData();
-  const actorData = this.actor.toObject(false);
+    const context = await super.getData();
+    const actorData = this.actor.toObject(false);
     context.adrenalineLabel = game.i18n.localize("OG.power")
+    console.log(context)
     return context;
   }
 
