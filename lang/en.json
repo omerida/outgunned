@@ -277,6 +277,7 @@
     "strongSpots": "Strong Spots",
     "successDice": "Success Dice",
     "support": "Support",
+    "superhero": "Superhero",
     "survive": "Survive",
     "toggleHint": "Click to toggle this value",
     "total": "Total",
@@ -403,7 +404,8 @@
       "director": "Director",
       "enemy": "Enemy",
       "mission": "Mission",
-      "support": "Support"
+      "support": "Support",
+      "superhero": "Superhero"
     },
     "Item": {
       "age": "Age",
