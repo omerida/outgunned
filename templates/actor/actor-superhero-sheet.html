@@ -72,9 +72,9 @@
             {{else}}
             <div class="info-cell indent"><input name="system.catchphrase" type="text" value="{{actor.system.catchphrase}}"/></div>
             {{/if}}
-            <div class="red">{{originLabel}}</div>
+            <div class="red">{{localize 'OG.origin'}}</div>
             {{#if isLocked}}
-            <div class="info-cell indent truncate" title="{{actor.system.origin}}">{{actor.system.mission}}</div>
+            <div class="info-cell indent truncate" title="{{actor.system.origin}}">{{actor.system.origin}}</div>
             {{else}}
             <div class="info-cell indent"><input name="system.origin" type="text" value="{{actor.system.origin}}"/>
             </div>

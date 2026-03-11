@@ -81,7 +81,10 @@
       "locked": false,
       "cyberEnhance": false,
       "baseGold": 0,
-      "specialRole": false
+      "specialRole": false,
+      "_superhero_sheet": "These attributes only show up in superhero sheets",
+      "origin": "",
+      "alias":  ""
     },
     "support": {
       "templates": ["base"],
