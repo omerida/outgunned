@@ -29,6 +29,10 @@
 }  
 
 
+.outgunned .superhero-character-sheet {
+--primary-colour: #1d4a87;
+}
+
 
 body {
   background-attachment: fixed !important;
@@ -68,7 +72,10 @@ body {
   background-size: cover; 
   min-width: 150px;
   height: 70px;
+}
 
+.outgunned .superhero-character-sheet .logo {
+  background-image:url("../assets/OG-Superheros_LOGO.png");
 }
 
 .outgunned .main-character-sheet {
