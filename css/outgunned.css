@@ -21,6 +21,7 @@
 :root {
 --primary-colour: rgb(177,37,26);
 --secondary-colour:cornsilk;
+--secondary-bg:rgb(200 200 200 / 50%);
 --mainTextColour: black;
 --primaryIcon: rgb(177,37,26);
 --secondaryIcon: black;
@@ -406,10 +407,13 @@ body {
 
 .outgunned .shortDesc p{
   height: fit-content;
-  border: 1px grey solid;
-  padding: 0px 5px 0px 5px;
+  padding: 8px;
   color: var(--mainTextColour);
-  margin: 0px;
+  margin: 0;
+}
+
+.outgunned .shortDesc p:nth-child(odd){
+  background-color: var(--secondary-bg)
 }
 
 .outgunned .feat-label{

@@ -131,7 +131,30 @@
 
             <div class="red upperCase spotlight contextmenu">{{localize 'OG.superpowers'}}</div>
             <div class="superpowers">
-                
+                <ol class="items-list">
+                    {{#each superpowers as |superpower id|}}
+                    <li class="item" data-iteam-id="{{superpower._id}}">
+                        <div class="indent superpower-name contextmenu">{{superpower.name}}</div>
+                        {{#if (eq superpower.system.adrenalineCost 0) }}
+                          <div></div>
+                        {{else}}
+                          <div class="centre">
+                            <a class="red"><i class="fa-solid fa-bolt"></i></a>
+                          </div>
+                        {{/if}}
+                        {{#if (eq superpower.system.usage 'none')}}
+                          <div></div>
+                        {{else}}
+                          {{#if (eq superpower.system.usage 'quick')}}
+                            <div>{{localize 'OG.quickAction'}}</div>
+                          {{else}}
+                          <div>{{localize 'OG.fullTurn' }}</div>
+                          {{/if}}
+                        {{/if}}
+                        <div class="shortDesc">{{{superpower.system.shortDesc}}}</div>
+                    </li>
+                    {{/each}}
+                </ol>
             </div>
 
         </div>

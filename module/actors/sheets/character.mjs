@@ -108,6 +108,7 @@ export class OutgunnedCharacterSheet extends foundry.appv1.sheets.ActorSheet {
     const feats = [];
     const conditions = [];
     const experiences = [];
+    const superpowers = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -126,6 +127,8 @@ export class OutgunnedCharacterSheet extends foundry.appv1.sheets.ActorSheet {
         experiences.push(i);
       } else if (i.type === 'feat' ){
         feats.push(i);
+      } else if (i.type === 'superpower' ){
+        superpowers.push(i)
       } else if (i.type === 'condition' ){
           i.system.label=""
           i.system.order = 0
@@ -227,6 +230,7 @@ export class OutgunnedCharacterSheet extends foundry.appv1.sheets.ActorSheet {
     context.feats = feats;
     context.conditions = conditions;
     context.experiences = experiences;
+    context.superpowers = superpowers;
   }
 
   /* -------------------------------------------- */
