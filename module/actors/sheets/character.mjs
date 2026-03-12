@@ -32,8 +32,7 @@ export class OutgunnedCharacterSheet extends foundry.appv1.sheets.ActorSheet {
 
 
   async getData() {
-    console.log("character.getData")
-    //Create context for easier access to actor data  
+    //Create context for easier access to actor data
     const context = super.getData();
     const actorData = this.actor.toObject(false);
     context.system = actorData.system;

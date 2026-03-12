@@ -331,8 +331,13 @@ body {
 }
 
 .outgunned .header-fields {
-  display: grid;
-  grid-template-columns: max-content auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  h3 {
+    text-align: right;
+    border-bottom: none;
+  }
 }
 
 .outgunned .restricted {

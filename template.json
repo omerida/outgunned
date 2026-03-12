@@ -215,7 +215,23 @@
     }  
   },
   "Item": {
-    "types": ["gear","gun","ride","skill","role","feat","age", "trope","condition","enemyFeat","specialAction", "experience", "weaponfeat","shot"],
+    "types": [
+      "gear",
+      "gun",
+      "ride",
+      "skill",
+      "role",
+      "feat",
+      "age",
+      "trope",
+      "condition",
+      "enemyFeat",
+      "specialAction",
+      "experience",
+      "weaponfeat",
+      "shot",
+      "superpower"
+    ],
     "templates": {
       "base": {
         "description": ""
@@ -345,6 +361,14 @@
       "subtype":"shot",
       "amount": 1,
       "cash": 0
-    }  
+    },
+    "superpower": {
+      "templates": ["base"],
+      "shortDesc": "",
+      "adrenalineCost": 0,
+      "usage": "none",
+      "restricted": false,
+      "source": ""
+    }
   }
 }

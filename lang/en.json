@@ -213,6 +213,7 @@
     "pedal": "Pedal Power",
     "planB":"Plan B",
     "power": "Power",
+    "powerCost": "Power Cost",
     "precision": "Precision",
     "proceed": "Proceed",
     "quickAction": "Quick Action",
@@ -281,6 +282,8 @@
     "successDice": "Success Dice",
     "support": "Support",
     "superhero": "Superhero",
+    "superpowers": "Superpowers",
+    "superpower": "Superpower",
     "survive": "Survive",
     "toggleHint": "Click to toggle this value",
     "total": "Total",
@@ -423,6 +426,7 @@
       "shot": "Shot",
       "skill": "Skill",
       "specialAction": "Special Action",
+      "superpower": "Superpower",
       "trope": "Trope",
       "weaponfeat": "Weapon Feat"
     }

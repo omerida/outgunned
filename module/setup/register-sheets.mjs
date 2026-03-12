@@ -18,6 +18,7 @@ import { OutgunnedSpecialActionSheet } from '../items/sheets/specialAction.mjs';
 import { OutgunnedExperienceSheet } from '../items/sheets/experience.mjs';
 import { OutgunnedWeaponFeat } from '../items/sheets/weaponfeat.mjs';
 import { OutgunnedShotSheet } from '../items/sheets/shot.mjs';
+import { OutgunnedSuperpowersSheet } from '../items/sheets/superpowers.mjs';
 import { OutgunnedSuperheroSheet } from "../actors/sheets/character-superhero.mjs";
 
 export function registerSheets () {
@@ -127,5 +128,10 @@ export function registerSheets () {
   foundry.documents.collections.Items.registerSheet('Outgunned', OutgunnedShotSheet, {
     types: ['shot'],
     makeDefault: true
-  })  
+  })
+
+  foundry.documents.collections.Items.registerSheet('Outgunned', OutgunnedSuperpowersSheet, {
+    types: ['superpower'],
+    makeDefault: true
+  })
 }
