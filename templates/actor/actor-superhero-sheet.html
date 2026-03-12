@@ -134,24 +134,21 @@
                 <ol class="items-list">
                     {{#each superpowers as |superpower id|}}
                     <li class="item" data-iteam-id="{{superpower._id}}">
-                        <div class="indent superpower-name contextmenu">{{superpower.name}}</div>
-                        {{#if (eq superpower.system.adrenalineCost 0) }}
-                          <div></div>
-                        {{else}}
-                          <div class="centre">
-                            <a class="red"><i class="fa-solid fa-bolt"></i></a>
-                          </div>
-                        {{/if}}
-                        {{#if (eq superpower.system.usage 'none')}}
-                          <div></div>
-                        {{else}}
-                          {{#if (eq superpower.system.usage 'quick')}}
-                            <div>{{localize 'OG.quickAction'}}</div>
-                          {{else}}
-                          <div>{{localize 'OG.fullTurn' }}</div>
-                          {{/if}}
-                        {{/if}}
+                        <div class="feat-grid">
+                            <div class="indent superpower-name contextmenu">{{superpower.name}}</div>
+                            <div>
+                                {{#if (gt superpower.system.adrenalineCost 0) }}
+                                <a class="red"><i class="fa-solid fa-bolt"></i></a>
+                                {{/if}}
+                            </div>
+                            {{#if (eq superpower.system.usage 'quick')}}
+                                <div>{{localize 'OG.quickAction'}}</div>
+                            {{else if (eq superpower.system.usage 'full')}}
+                              <div>{{localize 'OG.fullTurn' }}</div>
+                            {{/if}}
+                        </div>
                         <div class="shortDesc">{{{superpower.system.shortDesc}}}</div>
+
                     </li>
                     {{/each}}
                 </ol>
