@@ -31,4 +31,16 @@ export class OutgunnedSuperheroSheet extends OutgunnedCharacterSheet {
     context.adrenalineLabel = game.i18n.localize("OG.power")
     return context;
   }
+
+    /** @override */
+  activateListeners(html) {
+      super.activateListeners(html);
+      new OutgunnedContextMenu(
+          html,
+          ".superpower-name.contextmenu",
+          contextMenu.superpowerMenuOptions(this.actor, this.token),
+          {parentClassHooks: false, fixed:true}
+      );
+
+    }
 }

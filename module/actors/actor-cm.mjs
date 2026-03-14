@@ -279,3 +279,28 @@ export const needMenuOptions = (actor,token) => [
     }
   }  
 ]
+
+export const superpowerMenuOptions = (actor,token) => [
+  {
+    name: game.i18n.localize("OG.superpower"),
+    icon: "",
+    condition: () => true,
+    callback: (el) => {}
+  },
+  {
+    name: game.i18n.localize("OG.cm.view"),
+    icon: '<i class="fas fa-magnifying-glass"></i>',
+    condition: () => true,
+    callback: (el) => {
+      const itemId = OutgunnedUtilities.triggerEdit(el, actor, "itemId");
+    }
+  },
+  {
+    name: game.i18n.localize("OG.cm.delete"),
+    icon: '<i class="fas fa-trash"></i>',
+    condition: () => true,
+    callback: (el) => {
+      const itemId = OutgunnedUtilities.triggerDelete(el, actor, "itemId");
+    }
+  }
+]
