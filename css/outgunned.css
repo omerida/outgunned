@@ -21,6 +21,7 @@
 :root {
 --primary-colour: rgb(177,37,26);
 --secondary-colour:cornsilk;
+--secondary-bg:rgb(200 200 200 / 50%);
 --mainTextColour: black;
 --primaryIcon: rgb(177,37,26);
 --secondaryIcon: black;
@@ -29,6 +30,15 @@
 }  
 
 
+.outgunned .superhero-character-sheet {
+--primary-colour: #1d4a87;
+--primaryIcon: #1d4a87;
+
+  .primIcon {
+    /* CSS cascading is weird */
+    color: var(--primaryIcon);
+  }
+}
 
 body {
   background-attachment: fixed !important;
@@ -68,7 +78,10 @@ body {
   background-size: cover; 
   min-width: 150px;
   height: 70px;
+}
 
+.outgunned .superhero-character-sheet .logo {
+  background-image:url("../assets/OG-Superheros_LOGO.png");
 }
 
 .outgunned .main-character-sheet {
@@ -319,8 +332,31 @@ body {
 }
 
 .outgunned .header-fields {
+  width: 100%;
+  margin-bottom: 16px;
   display: grid;
-  grid-template-columns: max-content auto;
+  gap: 3px;
+  align-items: start;
+  grid-template-rows: min-content auto;
+  grid-template-areas:
+    "label icon"
+    "name icon";
+
+  .header-label {
+    grid-area: label;
+
+    h3 {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .header-name {
+    grid-area: name;
+  }
+  .image {
+    grid-area: icon;
+  }
 }
 
 .outgunned .restricted {
@@ -389,10 +425,13 @@ body {
 
 .outgunned .shortDesc p{
   height: fit-content;
-  border: 1px grey solid;
-  padding: 0px 5px 0px 5px;
+  padding: 8px;
   color: var(--mainTextColour);
-  margin: 0px;
+  margin: 0;
+}
+
+.outgunned .shortDesc p:nth-child(odd){
+  background-color: var(--secondary-bg)
 }
 
 .outgunned .feat-label{
