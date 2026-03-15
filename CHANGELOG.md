@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 13.4
+- Superhero character functionality has been added thanks to Oscar Merida
+- Change the "Sheet" settings on the character to use the Superhero sheet.
+- You can also create Superhero items which can be added to the character sheet.
+
 ## 13.3
 - HTML formatting removed from ride descriptions on character sheet.
 - Enemy and Support actors now show their actor image at the bottom of the page

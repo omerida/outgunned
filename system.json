@@ -2,16 +2,17 @@
   "id": "outgunned",
   "title": "Outgunned",
   "description": "The Outgunned system for FoundryVTT!",
-  "version": "13.3",
+  "version": "13.4",
   "compatibility": {
     "minimum": 13,
-    "verified": "13.348",
+    "verified": "13.351",
     "maximum": 13
   },
   "authors": [
     {"name": "Dangermouse"},
     {"name": "KarstenW"},
-    {"name": "IkeoMajesty"}
+    {"name": "IkeoMajesty"},
+    {"name": "Oscar Merida"}
   ],
   "esmodules": ["module/outgunned.mjs"],
   "styles": ["css/outgunned.css"],
@@ -226,7 +227,7 @@
   "secondaryTokenAttribute": "adrenaline",
   "url": "https://github.com/Genii-Locorum/outgunned",
   "manifest": "https://github.com/Genii-Locorum/outgunned/releases/latest/download/system.json",
-  "download": "https://github.com/Genii-Locorum/outgunned/releases/download/v13.3/system.zip",
+  "download": "https://github.com/Genii-Locorum/outgunned/releases/download/v13.4/system.zip",
   "license": "LICENSE.txt",
   "changelog": "CHANGELOG.md",
   "socket": true
