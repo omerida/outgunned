@@ -1,19 +1,16 @@
 <form class="{{cssClass}}" autocomplete="off">
   <header class="sheet-header">
     <div class="header-fields">
+      <div class="header-label">
       {{#if (eq item.system.subtype 'shot')}}
-        <div class="charname">{{localize 'OG.shot'}}: </div>
+        <h3>{{localize 'OG.shot'}}:</h3>
+      {{else if (eq item.system.subtype 'spend') }}
+        <h3>{{localize 'OG.spend'}}</h3>
       {{else}}
-        {{#if (eq item.system.subtype 'spend')}}
-          <div class="charname">{{localize 'OG.spend'}}: </div>
-        {{else}}
-          <div class="charname">{{localize 'OG.contact'}}: </div>
-        {{/if}}
+        <h3>{{localize 'OG.contact'}}</h3>
       {{/if}}
-      <div class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
-
-
-
+      </div>
+      <div class="header-name charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
     </div>
   </header>
   <br>

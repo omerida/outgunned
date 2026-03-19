@@ -1,21 +1,24 @@
 <form class="{{cssClass}}" autocomplete="off">
   <header class="sheet-header">
     <div class="header-fields">
-      <div class="charname">{{localize 'OG.role'}}:</div>
+      <div class="header-label">
+        <h3>{{localize 'OG.role'}}</h3>
+      </div>
     {{#if isGM}}
-      <div class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
+      <div class="header-name charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
     {{else}}
-      <div class="charname">{{item.name}}</div>
+      <div class="header-name charname">{{item.name}}</div>
     {{/if}}
     </div>
-
+    <div class="image">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" height="64" width="64" title="{{item.name}}"/>
+    </div>
   </header>
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="attributes">{{ localize 'OG.attributes' }}</a>
     <a class="item" data-tab="description">{{ localize 'OG.description' }}</a>
-    <a class="item" data-tab="image">{{ localize 'OG.image' }}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -121,10 +124,6 @@
       {{editor enrichedDescriptionValue engine="prosemirror" class="background-item-doc" target="system.description" button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Image Tab --}}
-    <div class="tab image" data-group="primary" data-tab="image">
-      <img class="profile-img" src="{{item.img}}" data-edit="img" height="200" width="200" title="{{item.name}}"/>
-    </div>
   </section>
   </section>
 </form>

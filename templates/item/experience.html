@@ -1,11 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <div class="header-fields">
-      <div class="charname">{{localize 'OG.experience'}}:</div>
-      <div class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
-    </div>
-
-  </header>
+  {{> itemHeaderNoImage header-label=(localize 'OG.experience') }}
 
   {{!-- Sheet Body --}}
   <section class="sheet-body" style="height: calc(100% - 75px) !important";>

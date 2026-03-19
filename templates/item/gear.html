@@ -1,11 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <div class="header-fields">
-      <div class="charname">{{localize 'OG.gear'}}:</div>
-      <div class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
-    </div>
-
-  </header>
+  {{> itemHeader header-label=(localize 'OG.gear') }}
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
@@ -81,12 +75,6 @@
       {{editor enrichedDescriptionValue engine="prosemirror" class="background-item-doc" target="system.description" button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Image Tab --}}
-    <div class="tab image" data-group="primary" data-tab="image">
-      <img class="profile-img" src="{{item.img}}" data-edit="img" height="200" width="200" title="{{item.name}}"/>
-    </div>
-
-   
   </section>
   </section>
 </form>

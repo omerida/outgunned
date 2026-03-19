@@ -1,15 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <div class="header-fields">
-      <div class="charname">{{localize 'OG.condition'}}:</div>
-    {{#if isGM}}
-      <div class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></div>
-    {{else}}
-      <div class="charname">{{item.name}}</div>
-    {{/if}}
-    </div>
-
-  </header>
+  {{> itemHeader header-label=(localize 'OG.condition') }}
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">

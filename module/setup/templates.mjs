@@ -4,23 +4,26 @@
  * @return {Promise}
  */
  export const preloadHandlebarsTemplates = async function() {
-  return foundry.applications.handlebars.loadTemplates([
+  return foundry.applications.handlebars.loadTemplates({
 
     // Actor partials.
-    "systems/outgunned/templates/actor/parts/actor-gear.html",
-    "systems/outgunned/templates/actor/parts/actor-description.html",
-    "systems/outgunned/templates/actor/parts/actor-feats.html",
-    "systems/outgunned/templates/actor/parts/actor-rides.html",
-    "systems/outgunned/templates/actor/parts/actor-youLook.html",
-    "systems/outgunned/templates/actor/parts/mission-shots.html",
-    "systems/outgunned/templates/actor/parts/mission-ride.html",
-    "systems/outgunned/templates/actor/parts/mission-villain.html",
-    "systems/outgunned/templates/actor/parts/mission-support.html",
-    "systems/outgunned/templates/actor/parts/mission-contacts.html",
-    "systems/outgunned/templates/actor/parts/mission-gold.html",
-    "systems/outgunned/templates/actor/parts/director-ride.html",
-    "systems/outgunned/templates/actor/parts/director-villain.html",
-    "systems/outgunned/templates/actor/parts/director-enemies.html",
-    "systems/outgunned/templates/actor/parts/director-support.html",
-  ]);
+    actorGear: "systems/outgunned/templates/actor/parts/actor-gear.html",
+    actorDescription: "systems/outgunned/templates/actor/parts/actor-description.html",
+    actorFeats: "systems/outgunned/templates/actor/parts/actor-feats.html",
+    actorRides: "systems/outgunned/templates/actor/parts/actor-rides.html",
+    actorYouLook: "systems/outgunned/templates/actor/parts/actor-youLook.html",
+    actorMissionShots: "systems/outgunned/templates/actor/parts/mission-shots.html",
+    actorMissionRide: "systems/outgunned/templates/actor/parts/mission-ride.html",
+    actorMissionVillain: "systems/outgunned/templates/actor/parts/mission-villain.html",
+    actorMissionSupport: "systems/outgunned/templates/actor/parts/mission-support.html",
+    actorMissionContacts: "systems/outgunned/templates/actor/parts/mission-contacts.html",
+    actorMissionGold: "systems/outgunned/templates/actor/parts/mission-gold.html",
+    actorDirectorRide: "systems/outgunned/templates/actor/parts/director-ride.html",
+    actorDirectoryVillain: "systems/outgunned/templates/actor/parts/director-villain.html",
+    actorDirectorEnemies: "systems/outgunned/templates/actor/parts/director-enemies.html",
+    actorDirectorSupport: "systems/outgunned/templates/actor/parts/director-support.html",
+    //Item partials
+    itemHeader: "systems/outgunned/templates/item/parts/header-fields.html",
+    itemHeaderNoImage: "systems/outgunned/templates/item/parts/header-fields-no-image.html",
+  });
 };
