@@ -140,12 +140,35 @@ body {
 
 .outgunned .item-skill-grid {
   display: grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: minmax(auto, 200px) 1fr;
+  gap: 4px 0;
+  margin: 8px 0;
+
+  & > div {
+    padding: 6px 4px;
+  }
+
+  /* Zebra stripe the rows, three columns */
+  & > div:nth-child(6n),
+  & > div:nth-child(6n-1),
+  & > div:nth-child(6n-2) {
+    background-color: rgba(128, 128, 128, 0.15)
+  }
 }
 
 .outgunned .item-condition-grid {
   display: grid;
-  grid-template-columns: 200px 150px 150px;
+  grid-template-columns: minmax(auto, 200px) 1fr 1fr;
+
+  & > div {
+    padding: 6px 4px;
+  }
+
+  /* Zebra stripe the rows */
+  & > div:nth-child(4n),
+  & > div:nth-child(4n-1) {
+    background-color: rgba(128, 128, 128, 0.15)
+  }
 }
 
 .outgunned .att-grid {

@@ -5,7 +5,6 @@
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="attributes">{{ localize 'OG.attributes' }}</a>
     <a class="item" data-tab="description">{{ localize 'OG.description' }}</a>
-    <a class="item" data-tab="image">{{ localize 'OG.image' }}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -15,7 +14,7 @@
     {{!-- Attributes Tab --}}
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       <div class="item-condition-grid">
-        <div class=" select-name left bold">{{localize 'OG.affectedAttType'}}</div>          
+        <div class="select-name left bold">{{localize 'OG.affectedAttType'}}</div>
         {{#if isGM}}
           <div class="left">
           <select class="mainText" data-handle-change name="system.attribute">
@@ -31,11 +30,8 @@
           <div class="select-name left">{{attribute}}</div>
           <div class="select-name left">{{attribute2}}</div>
         {{/if}}
-        <br>
-      </div>
 
-      <div class="item-condition-grid">
-        <div class=" select-name left bold">{{localize 'OG.affectedSkill'}}</div>          
+        <div class=" select-name left bold">{{localize 'OG.affectedSkill'}}</div>
         {{#if isGM}}
           <div class="left">
           <select class="mainText" data-handle-change name="system.skill">
@@ -51,24 +47,18 @@
           <div class="select-name left">{{skill}}</div>
           <div class="select-name left">{{skill2}}</div>
         {{/if}}
-        <br>
-      </div>
-
-      <div class="item-skill-grid">
-        <div class="select-name left bold" title="{{localize 'OG.commonHint'}}">{{localize 'OG.common'}}</div>  
+        <div class="select-name left bold" title="{{localize 'OG.commonHint'}}">{{localize 'OG.common'}}</div>
         <div>
           <a class="large-icon {{#if isGM}}toggle{{/if}} secIcon" data-property="common"><i class="{{#if item.system.common}}fa-solid fa-diamond{{else}}fa-regular fa-diamond{{/if}}"></i></a>
         </div>
-      </div>
 
       {{#if hasOwner}}
-        <div class="item-skill-grid">
-          <div class="select-name left bold" title="{{localize 'OG.activeHint'}}">{{localize 'OG.active'}}</div>  
-          <div>
-            <a class="large-icon toggle secIcon" data-property="active"><i class="{{#if item.system.active}}fa-solid fa-diamond{{else}}fa-regular fa-diamond{{/if}}"></i></a>
-          </div>
+        <div class="select-name left bold" title="{{localize 'OG.activeHint'}}">{{localize 'OG.active'}}</div>
+        <div>
+          <a class="large-icon toggle secIcon" data-property="active"><i class="{{#if item.system.active}}fa-solid fa-diamond{{else}}fa-regular fa-diamond{{/if}}"></i></a>
         </div>
       {{/if}}  
+      </div><!-- item-skill-grid-->
 
       <div title="{{localize 'OG.shortDescHint'}}">{{localize 'OG.shortDesc'}}</div>
       {{editor enrichedShortDescriptionValue engine="prosemirror" class="shortDesc-item-doc" target="system.shortDesc" button=true owner=owner editable=editable}}
@@ -81,10 +71,6 @@
       {{editor enrichedDescriptionValue engine="prosemirror" class="background-item-doc" target="system.description" button=true owner=owner editable=editable}}
     </div>
 
-    {{!-- Image Tab --}}
-    <div class="tab image" data-group="primary" data-tab="image">
-      <img class="profile-img" src="{{item.img}}" data-edit="img" height="200" width="200" title="{{item.name}}"/>
-    </div>
   </section>
 </section>
 </form>
