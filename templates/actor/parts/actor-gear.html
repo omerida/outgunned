@@ -15,7 +15,10 @@
   {{#each guns as |gun id|}}
     <li class="item" data-item-id="{{gun._id}}">
       <div class="guns-grid">
-        <div class="indent gear-cell-start">{{gun.name}}</div>
+        <div class="indent gear-cell-start">
+          {{> editButton isLocked=../isLocked style=small label=gun.name }}
+          {{gun.name}}
+        </div>
         <div class="centre gear-cell">
           <a class="">
             {{#each gun.system.weaponfeats as |weaponfeat id|}}
@@ -48,7 +51,7 @@
         {{else}}  
           <div class="centre gear-cell" title="{{localize 'OG.delete'}}"><a class="secIcon item-delete clickable"><i class="fa-solid fa-trash"></i></a></div>
         {{/if}} 
-      </div>  
+      </div>
     </li>
   {{/each}}    
   
@@ -69,6 +72,7 @@
               <a class="primIcon" title="{{localize 'OG.keyItem'}}"><i class="fa-solid fa-key"></i></a>
             {{/if}}
           {{/if}}
+          {{> editButton isLocked=../isLocked label=gear.name }}
           {{gear.name}}
         </div>
         {{#if (eq gear.system.location 'worn')}}

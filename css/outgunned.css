@@ -5,10 +5,9 @@
 } 
 
 @font-face {
-  font-family: 'Futura';
-  font-style: bold;
-  font-weight: 400;
-  src: url('../assets/Futura-Bold.ttf') format('woff2');
+  font-family: 'League Spartan';
+  font-style: normal;
+  src: url('../assets/LeagueSpartan/LeagueSpartan-VariableFont_wght.ttf') format('ttf');
 }
 
 @font-face {
@@ -55,7 +54,7 @@ body {
   background-image:url("../assets/background.jpg");
   background-size: cover; 
   padding: 8px;
-  font-family: Futura;
+  font-family: 'League Spartan', sans-serif;
   font-size: 12px;
   color: var(--mainTextColour)
 }
@@ -101,7 +100,9 @@ body {
 .outgunned .abilities-grid {
   display: grid;
   grid-template-columns: 100px 60px;
-  grid-column-gap: 10px; 
+  grid-column-gap: 10px;
+  grid-row-gap: 3px;
+  align-items: end;
 }
 
 .outgunned .info-grid {
@@ -183,12 +184,12 @@ body {
   background-color: var(--primary-colour);
   color: white;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 
 .outgunned .attribute-name {
   background-color: var(--primary-colour);
-  padding-left: 10px;
+  padding: 5px 0 0 10px;
   color: var(--secondary-colour);
 }
 
@@ -202,7 +203,7 @@ body {
 
 .outgunned .red {
   color: var(--primary-colour);
-}  
+}
 
 .outgunned .grey {
   color: grey;
@@ -402,12 +403,23 @@ body {
   border: 1px gray solid;
 }
 
-.outgunned .feat-grid{
+.outgunned .feat-grid {
   display: grid;
   border-top: 5px var(--primary-colour) solid;
   border-left: 1px grey solid;
   border-right: 1px grey solid;
-  grid-template-columns: 200px 50px 150px ;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+
+  .feat-utility {
+    white-space: nowrap;
+    text-align: right;
+  }
+
+  .feat-name {
+    font-weight: bold;
+    padding: 5px 0 3px 5px;
+  }
 }
 
 .outgunned .ride-header{
@@ -444,6 +456,7 @@ body {
 .outgunned .guns-grid{
   display: grid;
   grid-template-columns: 120px 80px 20px 20px 20px 20px 30px 30px 20px ;
+  align-items: baseline;
 }
 
 .outgunned .shortDesc p{
@@ -479,7 +492,8 @@ body {
 
 .outgunned .condition-grid{
   display: grid;
-  grid-template-columns: 100px 50px 150px ;
+  grid-template-columns: auto min-content auto;
+  align-items: baseline;
 }
 
 .outgunned .smallCondition {

@@ -172,7 +172,9 @@
     <a class="item" data-tab="gear">{{localize 'OG.gear'}}</a>
     <a class="item" data-tab="rides">{{localize 'OG.rides'}}</a>
     <a class="item" data-tab="description">{{localize 'OG.description'}}</a>
-    <a class="middle lock-icon actor-toggle clickable" title="{{ localize 'OG.lockHint' }}" data-property="locked"> <i class="{{#if system.locked}}fas fa-lock{{else}}fas fa-lock-open{{/if}}"></i> </a>
+    <a class="middle lock-icon actor-toggle clickable"
+       title="{{ localize 'OG.lockHint' }}"
+       data-property="locked"> <i class="{{#if isLocked}}fas fa-lock{{else}}fas fa-lock-open{{/if}}"></i> </a>
 
   </nav>
 

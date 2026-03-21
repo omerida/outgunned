@@ -22,8 +22,11 @@
     actorDirectoryVillain: "systems/outgunned/templates/actor/parts/director-villain.html",
     actorDirectorEnemies: "systems/outgunned/templates/actor/parts/director-enemies.html",
     actorDirectorSupport: "systems/outgunned/templates/actor/parts/director-support.html",
-    //Item partials
+    // Item partials
     itemHeader: "systems/outgunned/templates/item/parts/header-fields.html",
     itemHeaderNoImage: "systems/outgunned/templates/item/parts/header-fields-no-image.html",
+    // Generic helpers
+    editButton: "systems/outgunned/templates/parts/edit-button.html",
+    deleteButton: "systems/outgunned/templates/parts/delete-button.html",
   });
 };

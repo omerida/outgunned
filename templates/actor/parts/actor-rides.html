@@ -3,7 +3,10 @@
     {{#each rides as |ride id|}}
       <li class="item" data-item-id="{{ride._id}}">
         <div class="ride-header">
-          <div class="indent">{{ride.name}}</div>
+          <div class="indent">
+              {{> editButton isLocked=../isLocked style=small label=ride.name }}
+              {{ride.name}}
+          </div>
           {{#if ../isLocked}}
             <div class="centre" title="{{localize 'OG.edit'}}"><a class="item-edit clickable"><i class="fa-solid fa-magnifying-glass"></i></a></div>
           {{else}}  

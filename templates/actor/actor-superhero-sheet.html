@@ -132,22 +132,32 @@
             <div class="red upperCase">{{localize 'OG.superpowers'}}</div>
             <div class="superpowers">
                 <ol class="items-list">
+
                     {{#each superpowers as |superpower id|}}
                     <li class="item" data-item-id="{{superpower._id}}">
                         <div class="feat-grid">
-                            <div class="indent superpower-name contextmenu">{{superpower.name}}</div>
-                            <div>
+                            <div class="superpower-name">
+                                {{> editButton isLocked=../isLocked
+                                label=superpower.name
+                                }} {{superpower.name}}
+                            </div>
+                            <div class="feat-utility">
                                 {{#if (gt superpower.system.adrenalineCost 0) }}
                                 <a class="red"><i class="fa-solid fa-bolt"></i></a>
                                 {{/if}}
+                                {{#if (eq superpower.system.usage 'quick')}}
+                                    {{localize 'OG.quickAction'}}
+                                {{else if (eq superpower.system.usage 'full')}}
+                                    {{localize 'OG.fullTurn' }}
+                                {{/if}}
+                                {{> deleteButton isLocked=../isLocked
+                                    label=superpower.name }}
                             </div>
-                            {{#if (eq superpower.system.usage 'quick')}}
-                                <div>{{localize 'OG.quickAction'}}</div>
-                            {{else if (eq superpower.system.usage 'full')}}
-                              <div>{{localize 'OG.fullTurn' }}</div>
-                            {{/if}}
+
                         </div>
-                        <div class="shortDesc">{{{superpower.system.shortDesc}}}</div>
+                        <div class="shortDesc">
+                            {{{superpower.system.shortDesc}}}
+                        </div>
 
                     </li>
                     {{/each}}
@@ -159,8 +169,6 @@
 
         {{!-- Column 3 --}}
         <div class="sheet-header">
-
-
             {{!-- Sheet Tab Navigation --}}
             <nav class="sheet-tabs tabs" data-group="primary">
                 {{!-- Default tab is specified in actor-sheet.mjs --}}
@@ -169,7 +177,8 @@
                 <a class="item" data-tab="gear">{{localize 'OG.gear'}}</a>
                 <a class="item" data-tab="rides">{{localize 'OG.rides'}}</a>
                 <a class="item" data-tab="description">{{localize 'OG.description'}}</a>
-                <a class="middle lock-icon actor-toggle clickable" title="{{ localize 'OG.lockHint' }}"
+                <a class="middle lock-icon actor-toggle clickable"
+                   title="{{ localize 'OG.lockHint' }}"
                    data-property="locked"> <i
                         class="{{#if system.locked}}fas fa-lock{{else}}fas fa-lock-open{{/if}}"></i> </a>
 
