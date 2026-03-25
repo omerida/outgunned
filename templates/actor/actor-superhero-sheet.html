@@ -59,24 +59,24 @@
                 </div>
                 <div class="info-cell indent">{{tropeName}}</div>
             </div>
-            <div class="red">{{localize 'OG.flaw'}}</div>
+            <div class="red info-cell-wide">{{localize 'OG.flaw'}}</div>
             {{#if isLocked}}
-            <div class="info-cell indent truncate" title="{{actor.system.flaw}}">{{actor.system.flaw}}</div>
+            <div class="info-cell info-cell-wide indent truncate" title="{{actor.system.flaw}}">{{actor.system.flaw}}</div>
             {{else}}
-            <div class="info-cell indent"><input name="system.flaw" type="text" value="{{actor.system.flaw}}"/></div>
+            <div class="info-cell info-cell-wide indent"><input name="system.flaw" type="text" value="{{actor.system.flaw}}"/></div>
             {{/if}}
-            <div class="red">{{localize 'OG.catchphrase'}}</div>
+            <div class="red info-cell-wide">{{localize 'OG.catchphrase'}}</div>
             {{#if isLocked}}
-            <div class="info-cell indent truncate" title="{{actor.system.catchphrase}}">{{actor.system.catchphrase}}
+            <div class="info-cell info-cell-wide indent truncate" title="{{actor.system.catchphrase}}">{{actor.system.catchphrase}}
             </div>
             {{else}}
-            <div class="info-cell indent"><input name="system.catchphrase" type="text" value="{{actor.system.catchphrase}}"/></div>
+            <div class="info-cell info-cell-wide indent"><input name="system.catchphrase" type="text" value="{{actor.system.catchphrase}}"/></div>
             {{/if}}
-            <div class="red">{{localize 'OG.origin'}}</div>
+            <div class="red info-cell-wide">{{localize 'OG.origin'}}</div>
             {{#if isLocked}}
-            <div class="info-cell indent truncate" title="{{actor.system.origin}}">{{actor.system.origin}}</div>
+            <div class="info-cell info-cell-wide indent truncate" title="{{actor.system.origin}}">{{actor.system.origin}}</div>
             {{else}}
-            <div class="info-cell indent"><input name="system.origin" type="text" value="{{actor.system.origin}}"/>
+            <div class="info-cell info-cell-wide indent"><input name="system.origin" type="text" value="{{actor.system.origin}}"/>
             </div>
             {{/if}}
             <br>

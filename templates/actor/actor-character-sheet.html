@@ -51,23 +51,23 @@
       <div class="red info-cell item age contextmenu" data-item-id="{{actor.system.ageId}}">{{localize 'OG.age'}}</div>
       <div class="info-cell indent">{{ageName}}</div>
     </div> 
-    <div class="red">{{localize 'OG.flaw'}}</div>
+    <div class="red info-cell-wide">{{localize 'OG.flaw'}}</div>
     {{#if isLocked}}
-      <div class="info-cell indent truncate" title="{{actor.system.flaw}}">{{actor.system.flaw}}</div>
+      <div class="info-cell info-cell-wide indent truncate" title="{{actor.system.flaw}}">{{actor.system.flaw}}</div>
     {{else}}
-      <div class="info-cell indent"><input name="system.flaw" type="text" value="{{actor.system.flaw}}"/></div>
+      <div class="info-cell info-cell-wide indent"><input name="system.flaw" type="text" value="{{actor.system.flaw}}"/></div>
     {{/if}}
-    <div class="red">{{localize 'OG.catchphrase'}}</div>
+    <div class="red info-cell-wide">{{localize 'OG.catchphrase'}}</div>
     {{#if isLocked}}
-      <div class="info-cell indent truncate" title="{{actor.system.catchphrase}}">{{actor.system.catchphrase}}</div>
+      <div class="info-cell info-cell-wide indent truncate" title="{{actor.system.catchphrase}}">{{actor.system.catchphrase}}</div>
     {{else}}
-      <div class="info-cell indent"><input name="system.catchphrase" type="text" value="{{actor.system.catchphrase}}"/></div>
+      <div class="info-cell info-cell-wide indent"><input name="system.catchphrase" type="text" value="{{actor.system.catchphrase}}"/></div>
     {{/if}}
-    <div class="red">{{missionLabel}}</div>
+    <div class="red info-cell-wide">{{missionLabel}}</div>
     {{#if isLocked}}
-      <div class="info-cell indent truncate" title="{{actor.system.mission}}">{{actor.system.mission}}</div>
+      <div class="info-cell info-cell-wide indent truncate" title="{{actor.system.mission}}">{{actor.system.mission}}</div>
     {{else}}
-      <div class="info-cell indent"><input name="system.mission" type="text" value="{{actor.system.mission}}"/></div>
+      <div class="info-cell info-cell-wide indent"><input name="system.mission" type="text" value="{{actor.system.mission}}"/></div>
     {{/if}}
     <br>
 

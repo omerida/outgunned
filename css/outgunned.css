@@ -108,8 +108,32 @@ body {
 .outgunned .info-grid {
   display: grid;
   grid-template-columns: min-content auto;
+  grid-auto-rows: 25px; /* each row */
   max-height: 190px;
+
+  > div {
+    padding-top: 5px;
+  }
+
+  > div.red {
+    padding-top: 6px;
+  }
+
+  > div.info-cell.indent {
+    padding-left: 5px;
+  }
 }
+.outgunned .info-cell-wide:nth-child(even) {
+  height: 15px;
+  padding-top: 5px;
+}
+
+.outgunned .info-cell-wide:nth-child(odd) {
+  height: 20px;
+  padding-top: 0;
+  padding-left: 0;
+}
+
 
 .outgunned .info-cell {
   border-bottom: 1px solid var(--primary-colour);
@@ -411,6 +435,9 @@ body {
   grid-template-columns: auto auto;
   align-items: baseline;
 
+  > div {
+    padding: 5px;
+  }
   .feat-utility {
     white-space: nowrap;
     text-align: right;
@@ -428,7 +455,12 @@ body {
   border-left: 1px grey solid;
   border-right: 1px grey solid;
   border-bottom: 1px grey solid;
-  grid-template-columns: 300px 70px ;
+  grid-template-columns: 300px 70px;
+  align-items: stretch;
+  grid-auto-rows: 30px;
+  > div {
+    padding: 5px;
+  }
 }
 
 .outgunned .ride-grid{
@@ -448,18 +480,27 @@ body {
   color: var(--mainTextColour);
 }
 
-.outgunned .gear-grid{
+.outgunned .gear-grid {
   display: grid;
-  grid-template-columns: 300px 30px 30px ;
+  grid-template-columns: 300px 30px 30px;
+  grid-template-rows: 20px; /* first row */
+  grid-auto-rows: 35px; /* all other rows */
+  align-items: stretch;
+  margin: 5px 0 15px;
+  > div {
+    padding: 5px 0
+  }
+
+  > div.gear-cell-start {
+    padding: 5px 0 0 5px;
+  }
 }
 
-.outgunned .guns-grid{
-  display: grid;
-  grid-template-columns: 120px 80px 20px 20px 20px 20px 30px 30px 20px ;
-  align-items: baseline;
+.outgunned .gear-grid.guns-grid {
+  grid-template-columns: auto 80px 20px 20px 20px 20px 30px 30px 32px;
 }
 
-.outgunned .shortDesc p{
+.outgunned .shortDesc p {
   height: fit-content;
   padding: 8px;
   color: var(--mainTextColour);
@@ -517,10 +558,6 @@ body {
 }
 
 .outgunned .gear-cell-top {
-  border-bottom: 1px grey solid;
-}
-
-.outgunned .gun-cell-top {
   border-bottom: 1px grey solid;
 }
 

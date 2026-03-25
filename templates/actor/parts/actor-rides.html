@@ -10,7 +10,13 @@
           {{#if ../isLocked}}
             <div class="centre" title="{{localize 'OG.edit'}}"><a class="item-edit clickable"><i class="fa-solid fa-magnifying-glass"></i></a></div>
           {{else}}  
-            <div class="centre" title="{{localize 'OG.delete'}}"><a class="item-delete clickable"><i class="fa-solid fa-trash"></i></a></div>
+            <div class="centre" title="{{localize 'OG.delete'}}">
+                <span class="fa-stack item-delete clickable"
+                      title="{{localize 'OG.delete'}}">
+                    <i class="fas fa-circle fa-stack-2x grey"></i>
+                    <i class="fas fa-trash fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
           {{/if}}
         </div>    
         <div class="ride-grid">
@@ -24,7 +30,7 @@
                 {{#if (eq ride.system.speed.start 0)}}fa-solid fa-gauge-min{{/if}}
                 {{#if (eq ride.system.speed.start 1)}}fa-solid fa-gauge-low{{/if}}
                 {{#if (eq ride.system.speed.start 2)}}fa-solid fa-gauge-high{{/if}}
-               {{#if (eq ride.system.speed.start 3)}}fa-solid fa-gauge-max{{/if}}
+                {{#if (eq ride.system.speed.start 3)}}fa-solid fa-gauge-max{{/if}}
               "></i></a></div>
             {{/if}}      
           {{/loop}}
