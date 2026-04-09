@@ -8,7 +8,12 @@
               {{ride.name}}
           </div>
           {{#if ../isLocked}}
-            <div class="centre" title="{{localize 'OG.edit'}}"><a class="item-edit clickable"><i class="fa-solid fa-magnifying-glass"></i></a></div>
+            <span class="fa-stack item-edit clickable"
+                  title="Edit {{ride.name}}"
+            >
+                <i class="fas fa-circle fa-stack-2x red"></i>
+                <i class="fas fa-pen-to-square fa-stack-1x fa-inverse"></i>
+            </span>
           {{else}}  
             <div class="centre" title="{{localize 'OG.delete'}}">
                 <span class="fa-stack item-delete clickable"

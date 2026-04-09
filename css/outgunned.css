@@ -12,7 +12,6 @@
 
 @font-face {
   font-family: 'OG-dice';
-  font-style: bold;
   font-weight: 400;
   src: url('../assets/OG-dice.ttf') format('woff2');
 }
@@ -60,7 +59,7 @@ body {
 }
 
 .rollable:hover, .rollable:focus, .contextmenu:hover, .contextmenu.focus, .clickable:hover, .clickable.focus{
-  text-shadow: 0px 0px 14px black;
+  text-shadow: 0 0 14px black;
   cursor: pointer;
 }
 
@@ -85,7 +84,7 @@ body {
 
 .outgunned .main-character-sheet {
   display: grid;
-  grid-template-columns: 170px 250px 370px;
+  grid-template-columns: 170px clamp(225px, 30%, 400px) auto;
   grid-column-gap: 20px;
 }
 
@@ -143,7 +142,7 @@ body {
 
 .outgunned .info-cell input{
   border: none;
-  padding: 0px;
+  padding: 0;
   font-size: 12px;
   max-height: 15px;
   background: none;
@@ -153,7 +152,7 @@ body {
 
 .outgunned .gear-cell input{
   border: none;
-  padding: 0px;
+  padding: 0;
   font-size: 12px;
   max-height: 15px;
   background: none;
@@ -366,7 +365,7 @@ body {
 
 .outgunned .item-list-name {
   padding-left: 20px;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .outgunned .adrenaline {
@@ -414,8 +413,8 @@ body {
 
 .outgunned .items-list {
   list-style: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 .outgunned .shortDesc-item-doc {
@@ -455,22 +454,28 @@ body {
   border-left: 1px grey solid;
   border-right: 1px grey solid;
   border-bottom: 1px grey solid;
-  grid-template-columns: 300px 70px;
+  grid-template-columns: auto 30px;
   align-items: stretch;
   grid-auto-rows: 30px;
   > div {
     padding: 5px;
   }
+
+  > div:first-of-type {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 .outgunned .ride-grid{
   display: grid;
-  grid-template-columns: 45px 35px 35px 35px 70px 35px 35px 35px 45px;
+  grid-template-columns: repeat(4, 1fr) 2fr repeat(4, 1fr);
 }
 
 .outgunned .ride-grid-type{
   display: grid;
-  grid-template-columns: 41px 36px 36px 36px 36px 36px 36px 36px 36px 41px;
+  grid-template-columns: repeat(10, 1fr);
 }
 
 .outgunned .ride-grid-bottom{
@@ -482,22 +487,55 @@ body {
 
 .outgunned .gear-grid {
   display: grid;
-  grid-template-columns: 300px 30px 30px;
+  grid-template-columns: auto 30px 30px;
   grid-template-rows: 20px; /* first row */
-  grid-auto-rows: 35px; /* all other rows */
+  grid-auto-rows: 30px; /* all other rows */
   align-items: stretch;
   margin: 5px 0 15px;
   > div {
     padding: 5px 0
   }
 
+  div.item {
+    font-weight: bold;
+  }
+
   > div.gear-cell-start {
     padding: 5px 0 0 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
 .outgunned .gear-grid.guns-grid {
-  grid-template-columns: auto 80px 20px 20px 20px 20px 30px 30px 32px;
+  grid-template-columns: 20px auto 20px 20px 20px 20px 30px 30px 32px;
+  grid-auto-rows: auto;
+    > div.item-group {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1/-1;
+      grid-auto-rows: auto;
+      padding: 0;
+
+      > div:first-of-type {
+        border: 1px solid grey;
+      }
+
+      .gear-cell:nth-child(1 of .gear-cell) {
+        border-left: 1px solid grey;
+      }
+    }
+
+    div.gear-cell {
+      padding: 5px 0;
+    }
+    div.gear-cell-start {
+      padding: 5px 0 0 5px;
+      grid-column: 1 / -1; /* span all columns */
+      border: none;
+    }
+  }
 }
 
 .outgunned .shortDesc p {
@@ -516,7 +554,7 @@ body {
   border-left: 1px grey solid;
   border-right: 1px grey solid;
   color: var(--mainTextColour);
-  margin: 0px;
+  margin: 0;
 }
 
 .outgunned .result-fail {
@@ -531,7 +569,7 @@ body {
   background-color: var(--secondary-colour);
 }
 
-.outgunned .condition-grid{
+.outgunned .condition-grid {
   display: grid;
   grid-template-columns: auto min-content auto;
   align-items: baseline;
@@ -702,7 +740,7 @@ body {
 } 
 
 .sheet nav.sheet-tabs {
-  margin: 0 0;
+  margin: 0 0 10px;
 }
 
 .outgunned .tabs .item:hover {
@@ -711,7 +749,7 @@ body {
 
 .outgunned .tabs .item.active {
   color: black;
-  text-shadow:0px 0px 5px white;
+  text-shadow: 0 0 5px white;
 }
 
 .outgunned .sheet-body,
@@ -826,8 +864,8 @@ body {
 .outgunned .director-need {
   display: grid;
   grid-template-columns: repeat(18,20px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 .outgunned .director-chase-notes {
@@ -843,7 +881,7 @@ body {
 }
 
 .outgunned .director-chase-notes p {
-margin: 0px;
+margin: 0;
 }
 
 .outgunned .chase {
@@ -860,15 +898,15 @@ margin: 0px;
 .outgunned  .chase-need {
   display: grid;
   grid-template-columns: repeat(9,25px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 .outgunned  .chase-speed {
   display: grid;
   grid-template-columns: repeat(5,50px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   margin-top: 10px;
 }
 
@@ -894,8 +932,8 @@ margin: 0px;
   display: grid;
   margin-top: 5px;
   grid-template-columns: repeat(4,50px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }
 
 .outgunned .chase-sa{
@@ -918,8 +956,8 @@ margin: 0px;
 
 .outgunned .settingNote {
   flex: 0 0 100%;
-  font-size: var(--font-size-12);
-  line-height: var(--line-height-16);
+  font-size: 12px;
+  line-height: 160%;
   color: rgba(68, 7, 4, 1);
   margin: 3px 0;
 }
@@ -931,14 +969,14 @@ margin: 0px;
 .outgunned .charPlanB {
   display: grid;
   grid-template-columns: repeat(4,50px);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
 }  
  
 .game-icon:before {
   font-family: OG-dice !important;
-	font-style: normal;
-	font-weight: normal !important;
+  font-style: normal;
+  font-weight: normal !important;
 }
 
 .game-icon-bullet:before {
@@ -978,7 +1016,7 @@ margin: 0px;
 }
 
 .outgunned .prosemirror .editor-container {
-  margin: 0px;
+  margin: 0;
 }
 
 .outgunned textarea {
